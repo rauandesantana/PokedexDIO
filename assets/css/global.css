@@ -1,6 +1,8 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 body {
