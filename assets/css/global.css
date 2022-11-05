@@ -1,0 +1,86 @@
+* {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(248, 248, 248);
+}
+
+.content {
+    padding: 1rem;
+}
+
+.pokedex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.pokedex .pokemon {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+
+
+    background-color: rgb(194, 194, 194);
+
+
+    background-image: url("../imagens/bg_pokeball.png");
+    background-position: 115% 115%;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+
+.pokemon .indice {
+    opacity: 0.8;
+    font-size: small;
+    font-weight: bold;
+    text-align: right;
+}
+
+.pokemon .nome {
+    margin: 0.2rem 0px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.pokemon .detalhes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detalhes .tipos {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tipos .slot-tipos {
+    margin-top: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #FFF;
+    opacity: 0.8;
+    border-radius: 0.6rem;
+}
+
+.slot-tipos .texto-tipo {
+    font-size: x-small;
+    text-align: center;
+    color: rgb(194, 194, 194);
+}
+
+.pokemon .detalhes img {
+    height: 80px;
+    min-width: 80px;
+    object-fit: contain;
+}
