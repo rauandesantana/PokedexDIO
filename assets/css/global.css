@@ -40,7 +40,9 @@ body {
     display: flex;
     flex-flow: column nowrap;
     flex-grow: 1;
-    max-width: 240px;
+    flex-shrink: 1;
+    width: 150px;
+    max-width: 250px;
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 1rem;
@@ -95,6 +97,6 @@ body {
 
 .pokemon .detalhes img {
     height: 80px;
-    min-width: 80px;
+    width: 80px;
     object-fit: contain;
 }
