@@ -16,6 +16,7 @@
     <!--   CSS   -->
     <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/cabecalho.css">
+    <link rel="stylesheet" href="./assets/css/buscar_flutuante.css">
     <link rel="stylesheet" href="./assets/css/pokedex.css">
     <title>Pokedex DIO - Rauan Rosa</title>
 </head>
@@ -24,22 +25,33 @@
 
     <section class="content">
 
+        <!--   Cabeçalho   -->
         <header class="cabecalho">
             <h1>Pokedex</h1>
             <div class="buscar">
-                <input type="search" name="buscar-pokemon" id="buscar-pokemon" placeholder="Digite Aqui..." />
-                <img src="./assets/imagens/icone_buscar_cinza.svg" alt="Icone Filtrar">
+                <input id="buscar-texto" name="buscar-texto" placeholder="Buscar..." type="search" />
+                <img id="buscar-icone" src="./assets/imagens/icone_buscar_cinza.svg" alt="Icone Filtrar">
             </div>
         </header>
 
+        <!--   Barra de Busca Flutuante   -->
+        <div class="buscar-flutuante">
+            <div class="buscar">
+                <input id="buscar-teste" name="buscar-teste" placeholder="Buscar..." type="search" />
+            </div>
+        </div>
+        
+        <!--   Pokedex   -->
         <ol id="pokedex-lista" class="pokedex">
             <!--   Pokemons Inseridos Aqui   -->
         </ol>
 
     </section>
+
     <!--   JavaScript   -->
     <script src="./assets/js/poke-api.js"></script>
     <script src="./assets/js/main.js"></script>
+
 </body>
 
 </html>
