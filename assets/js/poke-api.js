@@ -33,7 +33,7 @@ class PokeAPI {
                             (a, b) => a["indice"] - b["indice"]
                             );
                         this.listaPokemons = listaOrdenada;
-                        this.apresentrarLista(this.listaPokemons);
+                        this.apresentrarListaPokemon(this.listaPokemons);
                     }
                 })
                 .catch((erro) => console.log("Erro: " + erro));
@@ -101,7 +101,7 @@ class PokeAPI {
         return objeto;
     }
 
-    apresentrarLista(listaPokemons) {
+    apresentrarListaPokemon(listaPokemons) {
         listaPokemons.forEach(pokemon => {
 
             let liPokemon = document.createElement("li");

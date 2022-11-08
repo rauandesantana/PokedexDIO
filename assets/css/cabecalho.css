@@ -1,0 +1,52 @@
+.content .cabecalho {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 200px;
+    margin-top: 1.3rem;
+    margin-bottom: 1rem;
+    padding: 0.2rem 1rem;
+    background-color: rgb(78, 78, 78);
+    border-radius: 1rem;
+}
+
+.cabecalho h1 {
+    color: rgb(190, 190, 190);
+    margin: 0px;
+}
+
+.cabecalho .buscar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buscar input {
+    padding: 0.2rem 0.5rem;
+    border: none;
+    border-radius: 0.6rem 0px 0px 0.6rem;
+}
+
+.buscar img {
+    height: 25px;
+    padding-right: 0.2rem;
+    background-color: #FFF;
+    border: none;
+    border-radius: 0px 0.6rem 0.6rem 0px;
+}
+
+@media screen and (max-width: 500px) {
+    .buscar img {
+        background-color: transparent;
+        filter: invert(100%);
+        cursor: pointer;
+    }
+
+    .buscar input {
+        display: none;
+        border: 2px solid rgb(78, 78, 78);
+        border-radius: 0.6rem;
+    }
+}

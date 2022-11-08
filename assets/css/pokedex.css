@@ -1,0 +1,74 @@
+.pokedex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.pokedex .pokemon {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+    flex-shrink: 1;
+    width: 150px;
+    max-width: 250px;
+    min-width: 150px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    background-color: grey;
+    background-image: url("../imagens/bg_pokeball.png");
+    background-position: 115% 115%;
+    background-repeat: no-repeat;
+    background-size: 80px;
+}
+
+.pokemon .indice {
+    opacity: 0.8;
+    font-size: small;
+    font-weight: bold;
+    text-align: right;
+}
+
+.pokemon .nome {
+    margin: 0.2rem 0px;
+    color: #FFF;
+    font-weight: bold;
+}
+
+.pokemon .detalhes {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.detalhes .tipos {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tipos .slot-tipos {
+    margin-top: 0.2rem;
+    padding: 0.2rem 0.5rem;
+    background-color: #FFF;
+    opacity: 0.8;
+    border-radius: 0.6rem;
+    font-size: x-small;
+    text-align: center;
+}
+
+.slot-tipos span {
+    color: grey;
+}
+
+.pokemon .detalhes img {
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+}
