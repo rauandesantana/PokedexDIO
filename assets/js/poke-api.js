@@ -171,6 +171,7 @@ class PokeAPI {
     apresentrarListaPokemon(listaPokemons) {
         listaPokemons.forEach(pokemon => {
             let liPokemon = document.createElement("li");
+            liPokemon.id = pokemon["indice"];
             liPokemon.className = "pokemon";
 
             let spanIndice = document.createElement("span");
