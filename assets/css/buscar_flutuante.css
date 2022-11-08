@@ -1,23 +1,23 @@
-.content .buscar-flutuante {
+.content .barra-flutuante {
     display: flex;
     flex-flow: row-reverse nowrap;
 }
 
-.buscar-flutuante .buscar {
+.barra-flutuante #buscar-flutuante {
     padding: 0.2rem;
     padding-right: 1rem;
     border-radius: 0.6rem;
     background-color: rgb(78, 78, 78);
 }
 
-.buscar-flutuante .buscar input {
+.barra-flutuante #buscar-flutuante input {
     padding: 0.3rem 0.6rem;
     border: none;
     border-radius: 0.6rem;
 }
 
 @media screen and (min-width: 1px) {
-    .buscar-flutuante .buscar {
+    .barra-flutuante #buscar-flutuante {
         display: none;
     }
 }

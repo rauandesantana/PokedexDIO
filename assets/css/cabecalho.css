@@ -16,20 +16,20 @@
     margin: 0px;
 }
 
-.cabecalho .buscar {
+.cabecalho #buscar-barra {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row-reverse nowrap;
     justify-content: space-between;
     align-items: center;
 }
 
-.cabecalho .buscar input {
+#buscar-barra input {
     padding: 0.3rem 0.6rem;
     border: none;
     border-radius: 0.6rem 0px 0px 0.6rem;
 }
 
-.cabecalho .buscar img {
+#buscar-barra img {
     height: 28px;
     padding-right: 0.3rem;
     background-color: #FFF;
@@ -38,13 +38,13 @@
 }
 
 @media screen and (max-width: 500px) {
-    .cabecalho .buscar img {
+    #buscar-barra img {
         background-color: transparent;
         filter: invert(100%);
         cursor: pointer;
     }
 
-    .cabecalho .buscar input {
+    #buscar-barra input {
         display: none;
     }
 }
