@@ -4,6 +4,7 @@
 }
 
 .barra-flutuante #buscar-flutuante {
+    display: none;
     padding: 0.2rem;
     padding-right: 1rem;
     border-radius: 0.6rem;
@@ -14,10 +15,4 @@
     padding: 0.3rem 0.6rem;
     border: none;
     border-radius: 0.6rem;
-}
-
-@media screen and (min-width: 1px) {
-    .barra-flutuante #buscar-flutuante {
-        display: none;
-    }
 }
