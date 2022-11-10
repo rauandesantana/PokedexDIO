@@ -41,10 +41,8 @@ class PokeAPI {
     }
 
     instanciarPokemon(pokemon) {
-        let indice, nome, imagem;
-        let tipos, altura, peso;
-        let vida, ataque, defesa;
-        let ataqueEspecial, defesaEspecial, velocidade;
+        let indice, nome, imagem, tipos, corTipo, altura, peso;
+        let vida, ataque, defesa, ataqueEspecial, defesaEspecial, velocidade;
 
         // Indice
         (pokemon["id"] === undefined || pokemon["id"] === null)
@@ -75,6 +73,29 @@ class PokeAPI {
             });
         } else {
             tipos = ["Null"];
+        }
+
+        // Cor Tipo
+        switch (tipos[0]) {
+            case "Null" : corTipo = "#999EA0"; break;
+            case "normal" : corTipo = "#999EA0"; break;
+            case "fighting" : corTipo = "#D8425B"; break;
+            case "flying" : corTipo = "#9EB8E8"; break;
+            case "fire" : corTipo = "#FFA450"; break;
+            case "water" : corTipo = "#5FA9DD"; break;
+            case "ground" : corTipo = "#D78656"; break;
+            case "grass" : corTipo = "#5EBC5F"; break;
+            case "electric" : corTipo = "#F3CD22"; break;
+            case "ice" : corTipo = "#7DD3C8"; break;
+            case "poison" : corTipo = "#B263CD"; break;
+            case "psychic" : corTipo = "#FC8B88"; break;
+            case "bug" : corTipo = "#96C22E"; break;
+            case "rock" : corTipo = "#CCBE8E"; break;
+            case "ghost" : corTipo = "#5B6CB5"; break;
+            case "dragon" : corTipo = "#086FC0"; break;
+            case "dark" : corTipo = "#636274"; break;
+            case "steel" : corTipo = "#5498A4"; break;
+            case "fairy" : corTipo = "#ED93E4"; break;
         }
 
         // Altura
@@ -155,6 +176,7 @@ class PokeAPI {
             nome: nome,
             imagem: imagem,
             tipos: tipos,
+            corTipo: corTipo,
             altura: altura,
             peso: peso,
             vida: vida,
@@ -173,6 +195,7 @@ class PokeAPI {
             let liPokemon = document.createElement("li");
             liPokemon.id = pokemon["indice"];
             liPokemon.className = "pokemon";
+            liPokemon.style.backgroundColor = pokemon["corTipo"];
 
             let spanIndice = document.createElement("span");
             spanIndice.className = "indice";
@@ -195,6 +218,7 @@ class PokeAPI {
 
                 let spanTipo = document.createElement("span");
                 spanTipo.textContent = tipo;
+                spanTipo.style.color = pokemon["corTipo"];
 
                 liTipo.appendChild(spanTipo);
                 olTipos.appendChild(liTipo);

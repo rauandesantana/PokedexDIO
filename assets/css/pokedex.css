@@ -18,7 +18,7 @@
     margin: 0.5rem;
     padding: 0.5rem;
     border-radius: 1rem;
-    background-color: grey;
+    background-color: rgb(150, 150, 150);
     background-image: url("../imagens/bg_pokeball.png");
     background-position: 115% 115%;
     background-repeat: no-repeat;
@@ -26,7 +26,7 @@
 }
 
 .pokemon .indice {
-    opacity: 0.8;
+    color: #FFF;
     font-size: small;
     font-weight: bold;
     text-align: right;
@@ -66,10 +66,9 @@
 
 .slot-tipos span {
     text-transform: capitalize;
-    color: grey;
+    color: rgb(150, 150, 150);
+    font-weight: bold;
 }
-
-
 
 .pokemon .detalhes img {
     height: 80px;
