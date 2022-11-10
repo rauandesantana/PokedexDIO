@@ -31,7 +31,7 @@ mediaQuerry.addEventListener("change", () => {
 
 let aguardar = false;
 elementoBusca.addEventListener("input", () => {
-    buscarPokemon(elementoBusca.value, pokeAPI.listaPokemons);
+    buscarPokemon(elementoBusca.value, pokeAPI.listaPokemons, pokedex);
     textoBusca = elementoBusca.value;
 });
 
