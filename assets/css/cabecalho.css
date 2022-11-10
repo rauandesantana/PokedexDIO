@@ -29,6 +29,10 @@
     border-radius: 0.6rem 0px 0px 0.6rem;
 }
 
+#buscar-barra input:disabled {
+    background-color: #FFF;
+}
+
 #buscar-barra img {
     height: 28px;
     padding-right: 0.3rem;

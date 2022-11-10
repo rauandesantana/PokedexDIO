@@ -11,8 +11,12 @@
     background-color: rgb(78, 78, 78);
 }
 
-.barra-flutuante #buscar-flutuante input {
+#buscar-flutuante input {
     padding: 0.3rem 0.6rem;
     border: none;
     border-radius: 0.6rem;
+}
+
+#buscar-flutuante input:disabled {
+    background-color: #FFF;
 }

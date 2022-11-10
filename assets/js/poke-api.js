@@ -29,6 +29,7 @@ class PokeAPI {
                 this.apresentrarListaPokemon(listaObjetos);
                 if (this.listaPokemons.length > 0) {
                     document.getElementById("carregando").style.display = "none";
+                    document.getElementById("buscar-texto").disabled = false;
                 }
             })
             .catch((erro) => console.log("(Estagio 1) Erro: " + erro));

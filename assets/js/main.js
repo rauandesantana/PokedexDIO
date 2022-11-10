@@ -13,6 +13,7 @@ const inputBusca = document.createElement("input");
 inputBusca.id = "buscar-texto";
 inputBusca.type = "search";
 inputBusca.placeholder = "Buscar...";
+inputBusca.disabled = true;
 let buscaFlutuante;
 let textoBusca = "";
 
