@@ -58,9 +58,24 @@ class PokeAPI {
             : nome = pokemon["name"];
 
         // Imagem
-        (pokemon["sprites"]["front_default"] === undefined || pokemon["sprites"]["front_default"] === null)
-            ? imagem = "./assets/imagens/pokeball.png"
-            : imagem = pokemon["sprites"]["front_default"];
+        let opcoesImagem = [
+            pokemon["sprites"]["other"]["official-artwork"]["front_default"],
+            pokemon["sprites"]["other"]["home"]["front_default"],
+            pokemon["sprites"]["other"]["dream_world"]["front_default"],
+            pokemon["sprites"]["front_default"],
+        ];
+
+        opcoesImagem.forEach((localImagem, indice) => {
+            
+            if (imagem === undefined) {
+                if (localImagem !== undefined && localImagem !== null) {
+                    imagem = localImagem;
+                } else if (indice === (opcoesImagem.length - 1)) {
+                    imagem = "./assets/imagens/pokeball.png";
+                }
+            }
+
+        });
 
         // Tipos
         if (pokemon["types"] !== undefined || pokemon["types"] === null) {
@@ -225,15 +240,15 @@ class PokeAPI {
                 liTipo.className = "slot-tipos";
 
                 (indice === 0)
-                ? liTipo.style.backgroundColor = "#FFFFFF"
-                : liTipo.style.backgroundColor = pokemon["corTipo"][indice];
+                    ? liTipo.style.backgroundColor = "#FFFFFF"
+                    : liTipo.style.backgroundColor = pokemon["corTipo"][indice];
 
                 let spanTipo = document.createElement("span");
                 spanTipo.textContent = tipo;
-                
+
                 (indice === 0)
-                ? spanTipo.style.color = pokemon["corTipo"][0]
-                : spanTipo.style.color = "#FFFFFF";
+                    ? spanTipo.style.color = pokemon["corTipo"][0]
+                    : spanTipo.style.color = "#FFFFFF";
 
                 liTipo.appendChild(spanTipo);
                 olTipos.appendChild(liTipo);
