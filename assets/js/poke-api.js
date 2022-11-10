@@ -27,6 +27,9 @@ class PokeAPI {
             .then((listaObjetos) => {
                 this.listaPokemons = listaObjetos;
                 this.apresentrarListaPokemon(listaObjetos);
+                if (this.listaPokemons.length > 0) {
+                    document.getElementById("carregando").style.display = "none";
+                }
             })
             .catch((erro) => console.log("(Estagio 1) Erro: " + erro));
     }

@@ -1,4 +1,6 @@
 function buscarPokemon(filtro, listaPokemons, pokedex) {
+    let carregando = document.getElementById("carregando");
+    let ocultos = 0;
 
     listaPokemons.forEach(
         (item) => {
@@ -21,10 +23,18 @@ function buscarPokemon(filtro, listaPokemons, pokedex) {
                     li.style.display = "flex";
                 } else {
                     li.style.display = "none";
+                    ocultos++;
                 }
 
             }
         }
     );
 
+    if (ocultos === listaPokemons.length) {
+        carregando.style.display = "flex";
+        carregando.children[1].innerHTML = "Nenhum Pokemon Encontrado!";
+    } else {
+        carregando.style.display = "none";
+        carregando.children[1].innerHTML = "Carregando...";
+    }
 }

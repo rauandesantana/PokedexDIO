@@ -24,3 +24,21 @@ body {
     position: sticky;
     top: -1.25rem;
 }
+
+.content .carregando {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.carregando img {
+    width: 30%;
+}
+
+.carregando span {
+    color: rgb(78, 78, 78);
+    font-size: 3.5vw;
+    font-weight: bold;
+}
