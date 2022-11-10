@@ -76,27 +76,32 @@ class PokeAPI {
         }
 
         // Cor Tipo
-        switch (tipos[0]) {
-            case "Null" : corTipo = "#999EA0"; break;
-            case "normal" : corTipo = "#999EA0"; break;
-            case "fighting" : corTipo = "#D8425B"; break;
-            case "flying" : corTipo = "#9EB8E8"; break;
-            case "fire" : corTipo = "#FFA450"; break;
-            case "water" : corTipo = "#5FA9DD"; break;
-            case "ground" : corTipo = "#D78656"; break;
-            case "grass" : corTipo = "#5EBC5F"; break;
-            case "electric" : corTipo = "#F3CD22"; break;
-            case "ice" : corTipo = "#7DD3C8"; break;
-            case "poison" : corTipo = "#B263CD"; break;
-            case "psychic" : corTipo = "#FC8B88"; break;
-            case "bug" : corTipo = "#96C22E"; break;
-            case "rock" : corTipo = "#CCBE8E"; break;
-            case "ghost" : corTipo = "#5B6CB5"; break;
-            case "dragon" : corTipo = "#086FC0"; break;
-            case "dark" : corTipo = "#636274"; break;
-            case "steel" : corTipo = "#5498A4"; break;
-            case "fairy" : corTipo = "#ED93E4"; break;
-        }
+        corTipo = [];
+        tipos.map(
+            (tipo) => {
+                switch (tipo) {
+                    case "Null": corTipo.push("#999EA0"); break;
+                    case "normal": corTipo.push("#999EA0"); break;
+                    case "fighting": corTipo.push("#D8425B"); break;
+                    case "flying": corTipo.push("#9EB8E8"); break;
+                    case "fire": corTipo.push("#FFA450"); break;
+                    case "water": corTipo.push("#5FA9DD"); break;
+                    case "ground": corTipo.push("#D78656"); break;
+                    case "grass": corTipo.push("#5EBC5F"); break;
+                    case "electric": corTipo.push("#F3CD22"); break;
+                    case "ice": corTipo.push("#7DD3C8"); break;
+                    case "poison": corTipo.push("#B263CD"); break;
+                    case "psychic": corTipo.push("#FC8B88"); break;
+                    case "bug": corTipo.push("#96C22E"); break;
+                    case "rock": corTipo.push("#CCBE8E"); break;
+                    case "ghost": corTipo.push("#5B6CB5"); break;
+                    case "dragon": corTipo.push("#086FC0"); break;
+                    case "dark": corTipo.push("#636274"); break;
+                    case "steel": corTipo.push("#5498A4"); break;
+                    case "fairy": corTipo.push("#ED93E4"); break;
+                }
+            }
+        );
 
         // Altura
         (pokemon["height"] === undefined || pokemon["height"] === null)
@@ -195,7 +200,7 @@ class PokeAPI {
             let liPokemon = document.createElement("li");
             liPokemon.id = pokemon["indice"];
             liPokemon.className = "pokemon";
-            liPokemon.style.backgroundColor = pokemon["corTipo"];
+            liPokemon.style.backgroundColor = pokemon["corTipo"][0];
 
             let spanIndice = document.createElement("span");
             spanIndice.className = "indice";
@@ -211,14 +216,21 @@ class PokeAPI {
             let olTipos = document.createElement("ol");
             olTipos.className = "tipos";
 
-            pokemon["tipos"].forEach(tipo => {
+            pokemon["tipos"].forEach((tipo, indice) => {
 
                 let liTipo = document.createElement("li");
                 liTipo.className = "slot-tipos";
 
+                (indice === 0)
+                ? liTipo.style.backgroundColor = "#FFFFFF"
+                : liTipo.style.backgroundColor = pokemon["corTipo"][indice];
+
                 let spanTipo = document.createElement("span");
                 spanTipo.textContent = tipo;
-                spanTipo.style.color = pokemon["corTipo"];
+                
+                (indice === 0)
+                ? spanTipo.style.color = pokemon["corTipo"][0]
+                : spanTipo.style.color = "#FFFFFF";
 
                 liTipo.appendChild(spanTipo);
                 olTipos.appendChild(liTipo);

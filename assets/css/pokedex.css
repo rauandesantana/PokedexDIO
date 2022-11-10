@@ -23,6 +23,7 @@
     background-position: 115% 115%;
     background-repeat: no-repeat;
     background-size: 80px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.123);
 }
 
 .pokemon .indice {
@@ -42,31 +43,39 @@
 .pokemon .detalhes {
     display: flex;
     flex-flow: row nowrap;
+    flex-grow: 1;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .detalhes .tipos {
     display: flex;
     flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
     list-style: none;
     margin: 0px;
     padding: 0px;
 }
 
 .tipos .slot-tipos {
-    margin-top: 0.2rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4rem;
     padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
     background-color: #FFF;
-    opacity: 0.8;
     border-radius: 0.6rem;
-    font-size: x-small;
-    text-align: center;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.123);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.171)
 }
 
 .slot-tipos span {
     text-transform: capitalize;
-    color: rgb(150, 150, 150);
+    color: #FFF;
     font-weight: bold;
 }
 
