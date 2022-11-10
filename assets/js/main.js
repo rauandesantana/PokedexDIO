@@ -1,9 +1,9 @@
-// Poke API
+/////////////////////////////////////////////////////////////// Poke API
 const pokedex = document.getElementById("pokedex-lista");
 const pokeAPI = new PokeAPI(pokedex);
 pokeAPI.inicializar();
 
-// Barra de Busca
+/////////////////////////////////////////////////////////////// Barra de Busca
 const buscar = [
     document.getElementById("buscar-barra"),
     document.getElementById("buscar-flutuante"),
@@ -31,7 +31,11 @@ mediaQuerry.addEventListener("change", () => {
 
 let aguardar = false;
 elementoBusca.addEventListener("input", () => {
-    buscarPokemon(elementoBusca.value, pokeAPI.listaPokemons, pokedex);
+    buscarPokemon(
+        elementoBusca.value.toLowerCase(),
+        pokeAPI.listaPokemons,
+        pokedex,
+    );
     textoBusca = elementoBusca.value;
 });
 

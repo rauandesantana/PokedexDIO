@@ -36,6 +36,7 @@
     margin: 0.2rem 0px;
     color: #FFF;
     font-weight: bold;
+    text-transform: capitalize;
 }
 
 .pokemon .detalhes {
@@ -64,8 +65,11 @@
 }
 
 .slot-tipos span {
+    text-transform: capitalize;
     color: grey;
 }
+
+
 
 .pokemon .detalhes img {
     height: 80px;
