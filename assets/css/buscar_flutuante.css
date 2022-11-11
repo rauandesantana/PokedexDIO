@@ -1,4 +1,4 @@
-.content .barra-flutuante {
+.content-lista .barra-flutuante {
     display: flex;
     flex-flow: row-reverse nowrap;
 }

@@ -18,23 +18,24 @@
     <link rel="stylesheet" href="./assets/css/cabecalho.css">
     <link rel="stylesheet" href="./assets/css/buscar_flutuante.css">
     <link rel="stylesheet" href="./assets/css/pokedex.css">
+    <link rel="stylesheet" href="./assets/css/detalhes_pokemons.css">
     <title>Pokedex DIO - Rauan Rosa</title>
 </head>
 
 <body>
 
-    <section class="content">
+    <section class="content-lista">
 
         <header class="top-content">
 
             <!--   Cabeçalho   -->
-            <div class="cabecalho">
+            <header class="cabecalho">
                 <h1>Pokedex</h1>
                 <div id="buscar-barra">
                     <img id="buscar-icone" src="./assets/imagens/icone_buscar_cinza.svg" alt="Icone Filtrar">
                     <!--   Input Busca Inserido Aqui   -->
                 </div>
-            </div>
+            </header>
 
             <!--   Barra de Busca Flutuante   -->
             <div class="barra-flutuante">
@@ -50,11 +51,96 @@
             <!--   Pokemons Inseridos Aqui   -->
         </ol>
 
+        <!--   Carregando   -->
         <section id="carregando" class="carregando">
             <img src="./assets/imagens/carregando.gif" alt="Imagem de Carregamento">
             <span>Carregando...</span>
         </section>
 
+    </section>
+
+    <!--   Detalhes Pokemons   -->
+    <section class="content-detalhes">
+        <ol id="pokemon-detalhes" class="lista-detalhes">
+            <li class="voltar-detalhes">
+                <img id="imagem-voltar-detalhes" src="./assets/imagens/seta_voltar.svg" alt="Imagem Pokemon">
+            </li>
+            <li class="cabecalho-detalhes">
+                <div class="nome-tipos-detalhes">
+                    <span class="nome-detalhes">Null</span>
+                    <div id="tipos-detalhes" class="tipos-detalhes">
+                        <span class="slot-tipo-detalhes">Null</span>
+                        <span class="slot-tipo-detalhes">Null</span>
+                    </div>
+                </div>
+                <span class="indice-detalhes">#001</span>
+            </li>
+            <li class="imagem-detalhes">
+                <img src="./assets/imagens/pokeball.png" alt="Imagem Pokemon">
+            </li>
+            <li class="descricao-detalhes">
+                <ol class="atributos-detalhes">
+                    <li>Altura</li>
+                    <li>0,00 m</li>
+                    <li>Peso</li>
+                    <li class="separar">00,0 kg</li>
+                    <li>Vida</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Ataque</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Defesa</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Atq. Esp.</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Def. Esp.</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>Velocidade</li>
+                    <li>
+                        <div class="pontos-detalhes">
+                            <span>0</span>
+                            <div class="barra-detalhes">
+                                <div id="vida-detalhes" class="valor-barra-detalhes"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+            </li>
+        </ol>
     </section>
 
     <!--   JavaScript   -->

@@ -1,4 +1,4 @@
-.pokedex {
+.content-lista .pokedex {
     display: flex;
     flex-flow: row wrap;
     justify-content: stretch;
@@ -70,7 +70,7 @@
     background-color: #FFF;
     border-radius: 0.6rem;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.123);
-    text-shadow: 1px 1px rgba(0, 0, 0, 0.171)
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.171);
 }
 
 .slot-tipos span {

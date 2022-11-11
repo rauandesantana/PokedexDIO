@@ -1,4 +1,10 @@
-.content .cabecalho {
+.content-lista .top-content {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -1.25rem;
+}
+
+.top-content .cabecalho {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
