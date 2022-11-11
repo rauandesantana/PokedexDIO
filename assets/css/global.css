@@ -44,3 +44,7 @@ body {
     align-items: center;
     min-height: 100vh;
 }
+
+#pokemon-detalhes {
+    display: none;
+}

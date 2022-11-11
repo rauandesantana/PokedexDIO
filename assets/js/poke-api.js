@@ -30,12 +30,18 @@ class PokeAPI {
                 this.listaPokemons = listaObjetos;
                 this.atributosMax = this.atribuirAtributosMax(listaObjetos);
                 this.apresentrarListaPokemon(listaObjetos);
-                if (this.listaPokemons.length > 0) {
+            })
+            .catch((erro) => console.log("(Estagio 1) Erro: " + erro))
+            .finally(() => {
+                let itensPokedex = document.querySelectorAll(".pokemon");
+                let carregado = itensPokedex.length === this.listaPokemons.length;
+
+                if (carregado) {
                     document.getElementById("carregando").style.display = "none";
                     document.getElementById("buscar-texto").disabled = false;
+                    adicionarBotoes();
                 }
-            })
-            .catch((erro) => console.log("(Estagio 1) Erro: " + erro));
+            });
     }
 
     async listarRequisicoes(item) {
