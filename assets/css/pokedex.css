@@ -24,6 +24,19 @@
     background-repeat: no-repeat;
     background-size: 80px;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.123);
+    cursor: pointer;   
+}
+
+.pokedex .pokemon:hover {
+    position:relative;
+    top: -4px;
+    left: -4px;
+    z-index: 1;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.253);
+}
+
+.pokedex .pokemon:active {
+    filter: brightness(1.1);
 }
 
 .pokemon .indice {
