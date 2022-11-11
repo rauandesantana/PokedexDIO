@@ -2,11 +2,13 @@ class PokeAPI {
     URL;
     pokedex;
     listaPokemons;
+    atributosMax;
 
     constructor(pokedex) {
         this.URL = "https://pokeapi.co/api/v2/pokemon/";
         this.pokedex = pokedex;
         this.listaPokemons = [];
+        this.atributosMax = {};
     }
 
     inicializar(inicial, limite) {
@@ -26,6 +28,7 @@ class PokeAPI {
             .then((resultados) => resultados.map(this.instanciarPokemon))
             .then((listaObjetos) => {
                 this.listaPokemons = listaObjetos;
+                this.atributosMax = this.atribuirAtributosMax(listaObjetos);
                 this.apresentrarListaPokemon(listaObjetos);
                 if (this.listaPokemons.length > 0) {
                     document.getElementById("carregando").style.display = "none";
@@ -45,7 +48,7 @@ class PokeAPI {
     }
 
     instanciarPokemon(pokemon) {
-        let indice, nome, imagem, tipos, corTipo, altura, peso;
+        let indice, nome, imagem, tipos, corTipo, altura, peso, total;
         let vida, ataque, defesa, ataqueEspecial, defesaEspecial, velocidade;
 
         // Indice
@@ -67,7 +70,7 @@ class PokeAPI {
         ];
 
         opcoesImagem.forEach((localImagem, indice) => {
-            
+
             if (imagem === undefined) {
                 if (localImagem !== undefined && localImagem !== null) {
                     imagem = localImagem;
@@ -124,12 +127,12 @@ class PokeAPI {
 
         // Altura
         (pokemon["height"] === undefined || pokemon["height"] === null)
-            ? altura = "Null"
+            ? altura = 0
             : altura = (pokemon["height"] / 10);
 
         // Peso
         (pokemon["weight"] === undefined || pokemon["weight"] === null)
-            ? peso = "Null"
+            ? peso = 0
             : peso = pokemon["weight"];
 
         // Estatisticas
@@ -140,59 +143,62 @@ class PokeAPI {
                 let valorAdd;
 
                 (estatistica["base_stat"] === undefined || pokemon["base_stat"] === null)
-                    ? valorBase = "Null"
+                    ? valorBase = 0
                     : valorBase = estatistica["base_stat"];
 
                 (estatistica["effort"] === undefined || pokemon["effort"] === null)
-                    ? valorAdd = "Null"
+                    ? valorAdd = 0
                     : valorAdd = estatistica["effort"];
 
                 switch (nomeAtributo) {
                     case "hp":
-                        vida = [valorBase, valorAdd];
+                        vida = valorBase + valorAdd;
                         break;
                     case "attack":
-                        ataque = [valorBase, valorAdd];
+                        ataque = valorBase + valorAdd;
                         break;
                     case "defense":
-                        defesa = [valorBase, valorAdd];
+                        defesa = valorBase + valorAdd;
                         break;
                     case "special-attack":
-                        ataqueEspecial = [valorBase, valorAdd];
+                        ataqueEspecial = valorBase + valorAdd;
                         break;
                     case "special-defense":
-                        defesaEspecial = [valorBase, valorAdd];
+                        defesaEspecial = valorBase + valorAdd;
                         break;
                     case "speed":
-                        velocidade = [valorBase, valorAdd];
+                        velocidade = valorBase + valorAdd;
                         break;
                 }
             });
         }
 
         (vida === undefined)
-            ? vida = ["Null", "Null"]
+            ? vida = 0
             : vida;
 
         (ataque === undefined)
-            ? ataque = ["Null", "Null"]
+            ? ataque = 0
             : ataque;
 
         (defesa === undefined)
-            ? defesa = ["Null", "Null"]
+            ? defesa = 0
             : defesa;
 
         (ataqueEspecial === undefined)
-            ? ataqueEspecial = ["Null", "Null"]
+            ? ataqueEspecial = 0
             : ataqueEspecial;
 
         (defesaEspecial === undefined)
-            ? defesaEspecial = ["Null", "Null"]
+            ? defesaEspecial = 0
             : defesaEspecial;
 
         (velocidade === undefined)
-            ? velocidade = ["Null", "Null"]
+            ? velocidade = 0
             : velocidade;
+
+        // Somando o Total de pontos
+        total = (vida + ataque + defesa + ataqueEspecial + defesaEspecial + velocidade);
 
         // Atribuir Objeto
         let objeto = {
@@ -203,6 +209,7 @@ class PokeAPI {
             corTipo: corTipo,
             altura: altura,
             peso: peso,
+            total: total,
             vida: vida,
             ataque: ataque,
             defesa: defesa,
@@ -269,5 +276,51 @@ class PokeAPI {
 
             this.pokedex.appendChild(liPokemon);
         });
+    }
+
+    atribuirAtributosMax(listaPokemons) {
+        let objeto = {
+            total: 0,
+            vida: 0,
+            ataque: 0,
+            defesa: 0,
+            ataqueEspecial: 0,
+            defesaEspecial: 0,
+            velocidade: 0,
+        };
+
+        listaPokemons.forEach(pokemon => {
+
+            (pokemon["total"] > objeto["total"])
+                ? objeto["total"] = pokemon["total"]
+                : objeto["total"];
+
+            (pokemon["vida"] > objeto["vida"])
+                ? objeto["vida"] = pokemon["vida"]
+                : objeto["vida"];
+
+            (pokemon["ataque"] > objeto["ataque"])
+                ? objeto["ataque"] = pokemon["ataque"]
+                : objeto["ataque"];
+
+            (pokemon["defesa"] > objeto["defesa"])
+                ? objeto["defesa"] = pokemon["defesa"]
+                : objeto["defesa"];
+
+            (pokemon["ataqueEspecial"] > objeto["ataqueEspecial"])
+                ? objeto["ataqueEspecial"] = pokemon["ataqueEspecial"]
+                : objeto["ataqueEspecial"];
+
+            (pokemon["defesaEspecial"] > objeto["defesaEspecial"])
+                ? objeto["defesaEspecial"] = pokemon["defesaEspecial"]
+                : objeto["defesaEspecial"];
+
+            (pokemon["velocidade"] > objeto["velocidade"])
+                ? objeto["velocidade"] = pokemon["velocidade"]
+                : objeto["velocidade"];
+
+        });
+
+        return objeto;
     }
 }
