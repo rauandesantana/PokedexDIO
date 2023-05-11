@@ -2,6 +2,8 @@
 
 Criando uma Pokedex em Desenvolvimento Web com HTML5, CSS3, JavaScript, Node.js e Consumo API.
 
+Preview: https://rauan-pokedex.onrender.com/
+
 ## Mobile Pixel 5
 <img width="200" src="https://github.com/rauandesantana/PokedexDIO/blob/main/assets/readme/carregando.png" alt="Carregando" /><img width="200" src="https://github.com/rauandesantana/PokedexDIO/blob/main/assets/readme/lista.png" alt="Lista" />
 <img width="200" src="https://github.com/rauandesantana/PokedexDIO/blob/main/assets/readme/busca.png" alt="Busca" /><img width="200" src="https://github.com/rauandesantana/PokedexDIO/blob/main/assets/readme/busca_nao_encontrada.png" alt="Busca Não Encontrada" />
